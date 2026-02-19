@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Annie ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 650px;
+            width: 100%;
+        }
+        
+        .love-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(255, 107, 107, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #ff9a9e;
+        }
+        
+        .love-card::before {
+            content: "👑";
+            font-size: 200px;
+            position: absolute;
+            bottom: -50px;
+            right: -30px;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+        
+        /* Beautiful photo frame */
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #ff6b6b, #ff9a9e);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
+            animation: frameGlow 2s ease-in-out infinite;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        @keyframes frameGlow {
+            0%, 100% { box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5); }
+            50% { box-shadow: 0 20px 40px rgba(255, 107, 107, 0.8); }
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-frame:hover img {
+            transform: scale(1.05);
+        }
+        
+        .photo-frame::after {
+            content: "❤️";
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 24px;
+            background: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        
+        .heart {
+            font-size: 70px;
+            margin-bottom: 10px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            display: inline-block;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            35% { transform: scale(1.2); }
+            45% { transform: scale(1.1); }
+            55% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 42px;
+            margin-bottom: 5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #ff9a9e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #888;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .name {
+            color: #ff6b6b;
+            font-weight: 600;
+            font-size: 48px;
+            margin: 15px 0;
+            border-bottom: 3px solid #ff9a9e;
+            padding-bottom: 15px;
+            display: inline-block;
+            text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.2);
+        }
+        
+        .message {
+            color: #555;
+            line-height: 1.9;
+            font-size: 18px;
+            margin: 30px 0;
+            text-align: left;
+            padding: 0 20px;
+        }
+        
+        .message p {
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .message p::before {
+            content: "💕";
+            position: absolute;
+            left: -5px;
+            top: 0;
+            opacity: 0.6;
+        }
+        
+        .message p:nth-child(1) { animation-delay: 0.2s; }
+        .message p:nth-child(2) { animation-delay: 0.4s; }
+        .message p:nth-child(3) { animation-delay: 0.6s; }
+        .message p:nth-child(4) { animation-delay: 0.8s; }
+        .message p:nth-child(5) { animation-delay: 1s; }
+        .message p:nth-child(6) { animation-delay: 1.2s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .signature {
+            margin-top: 30px;
+            font-size: 28px;
+            color: #ff6b6b;
+            font-style: italic;
+            border-top: 3px solid #ff9a9e;
+            padding-top: 20px;
+            font-weight: 600;
+        }
+        
+        .signature span {
+            font-size: 20px;
+            color: #888;
+            display: block;
+            margin-top: 5px;
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        
+        .floating-hearts span {
+            position: absolute;
+            font-size: 24px;
+            animation: float 4s infinite;
+            opacity: 0;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            80% { opacity: 0.6; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        .special-note {
+            background: #fff0f0;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px 0;
+            font-size: 16px;
+            color: #ff6b6b;
+            border: 2px dashed #ff9a9e;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px #ff9a9e; }
+            50% { box-shadow: 0 0 20px #ff6b6b; }
+        }
+        
+        .date {
+            color: #999;
+            font-size: 14px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        
+        .crown {
+            font-size: 30px;
+            margin-bottom: -10px;
+            display: block;
+        }
+        
+        .photo-instruction {
+            background: #ffe0e0;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #ff6b6b;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="love-card">
+            <span class="crown">👑</span>
+            <div class="heart">💖</div>
+            <h1>mY BeST BeST!</h1>
+            <div class="subtitle">(and that's forever)</div>
+            
+            <!-- PHOTO FRAME - Replace the image URL below -->
+            <div class="photo-frame">
+                <img src="Annie.jpg" alt="Annie" onerror="this.src='https://via.placeholder.com/200/ff9a9e/ffffff?text=Annie+❤️'">
+            </div>
+            
+            <div class="name">Annie</div>
+            
+            <div class="special-note">
+                ⭐ The most beautiful girl in the world ⭐
+            </div>
+            
+            <div class="message">
+                <p>From the moment I met you, Annie, my world became brighter, my days became sweeter, and my heart found its home.</p>
+                <p>You're not just my girlfriend - you're my absolute BEST BEST! My favorite hello and my hardest goodbye.</p>
+                <p>Your smile makes my heart do flip-flops, your laugh is my favorite song, and your happiness is my priority.</p>
+                <p>With you, every ordinary moment becomes extraordinary. You make me want to be the best version of myself.</p>
+                <p>Thank you for being you - beautiful, amazing, wonderful YOU. Thank you for choosing me, for loving me, for being mine.</p>
+                <p>I love you more than all the stars in the sky, and I'll spend forever showing you just how much you mean to me.</p>
+            </div>
+            
+            <div class="signature">
+                Forever Yours,<br>
+                Sammy ❤️
+                <span>Your Number 1, your partner, your Sammy</span>
+            </div>
+            
+            <div class="photo-instruction">
+                💝 Click on the photo for a surprise! 💝
+            </div>
+            
+            <div class="date">
+                💝 Made with all my love, just for my Annie 💝
+            </div>
+        </div>
+    </div>
+    
+    <div class="floating-hearts">
+        <span style="left: 5%; animation-duration: 4s;">💖</span>
+        <span style="left: 15%; animation-duration: 5s;">👑</span>
+        <span style="left: 25%; animation-duration: 3.2s;">💕</span>
+        <span style="left: 35%; animation-duration: 4.8s;">⭐</span>
+        <span style="left: 45%; animation-duration: 3.5s;">💗</span>
+        <span style="left: 55%; animation-duration: 4.2s;">💓</span>
+        <span style="left: 65%; animation-duration: 5.5s;">💘</span>
+        <span style="left: 75%; animation-duration: 3.8s;">💝</span>
+        <span style="left: 85%; animation-duration: 4.5s;">💞</span>
+        <span style="left: 95%; animation-duration: 5.2s;">👑</span>
+    </div>
+    
+    <script>
+        // Set today's date
+        const date = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.querySelector('.date').innerHTML = `💝 ${date.toLocaleDateString('en-US', options)} - Made just for you 💝`;
+        
+        // Surprise when she clicks the photo
+        document.querySelector('.photo-frame').addEventListener('click', function() {
+            alert('💖 I LOVE YOU ANNIE! 💖\nYou are the most beautiful person in my world!');
+        });
+        
+        // Heart click surprise
+        document.querySelector('.heart').addEventListener('click', function() {
+            alert('👑 YOU ARE MY QUEEN, ANNIE! 👑');
+        });
+    </script>
+</body>
+</html>
